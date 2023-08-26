@@ -62,7 +62,7 @@ public class WebSecurityConfig {
     public CorsFilter corsFilter(){
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.addAllowedOrigin("http://localhost:3000");
-        configuration.addAllowedOrigin("tasks-manager-mstitel-0.netlify.app");
+        configuration.addAllowedOrigin("https://tasks-manager-mstitel-0.netlify.app");
         configuration.addAllowedHeader("*");
         configuration.addAllowedMethod("*");
 
