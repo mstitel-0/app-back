@@ -38,7 +38,7 @@ public class AuthenticationController {
 
             private SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
 
-            @PostMapping("/signin")
+            @PostMapping("/login")
             public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest){
 
                 if(loginRequest.getUsername().equals("") || loginRequest.getPassword().equals("")){

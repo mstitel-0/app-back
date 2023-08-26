@@ -1,5 +1,7 @@
 package com.mstitel.timemanager.Task;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,10 +19,14 @@ public class Task {
     @Id
     private ObjectId id;
 
+    @NotBlank
     private String name;
 
+    @NotBlank
     private String description;
+    @NotBlank
     private Date endDate;
+
     private TaskStatus status = TaskStatus.IN_PROGRESS;
 
     private ObjectId userId;

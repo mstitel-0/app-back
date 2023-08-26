@@ -22,6 +22,9 @@ public class TaskController {
 
     @PostMapping("/add")
     public ResponseEntity<?> addTask(@RequestBody Task task){
+        if (task.getName().equals("") || task.getDescription().equals("") || task.getEndDate()== null){
+            return ResponseEntity.badRequest().body(new MessageResponse("Empty field"));
+        }
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         CustomUserDetails user = (CustomUserDetails)authentication.getPrincipal();
         task.setUserId(user.getId());
