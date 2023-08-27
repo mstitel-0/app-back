@@ -6,6 +6,7 @@ C:\WebSite\app-back\src\main\java\com\mstitel\timemanager\User\User.java
 C:\WebSite\app-back\src\main\java\com\mstitel\timemanager\Requests\LoginRequest.java
 C:\WebSite\app-back\src\main\java\com\mstitel\timemanager\TimemanagerApplication.java
 C:\WebSite\app-back\src\main\java\com\mstitel\timemanager\User\UserRepository.java
+C:\WebSite\app-back\src\main\java\com\mstitel\timemanager\Exceptions\CustomValidationHandler.java
 C:\WebSite\app-back\src\main\java\com\mstitel\timemanager\Task\TaskController.java
 C:\WebSite\app-back\src\main\java\com\mstitel\timemanager\Task\TaskDTO.java
 C:\WebSite\app-back\src\main\java\com\mstitel\timemanager\Task\Task.java
