@@ -24,7 +24,7 @@ public class TaskController {
 
     @PostMapping("/add")
     public ResponseEntity<?> addTask(@RequestBody Task task){
-        if (task.getName().equals("") || task.getDescription().equals("") || task.getEndDate()== null){
+        if (task.getName().equals("") || task.getDescription().equals("")){
             return ResponseEntity.badRequest().body(new MessageResponse("Empty field"));
         }
         Date currentDate = new Date();
