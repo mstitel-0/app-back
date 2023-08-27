@@ -10,6 +10,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Optional;
 import java.util.List;
 
@@ -25,9 +27,16 @@ public class TaskController {
         if (task.getName().equals("") || task.getDescription().equals("") || task.getEndDate()== null){
             return ResponseEntity.badRequest().body(new MessageResponse("Empty field"));
         }
+        Date currentDate = new Date();
+        if(task.getEndDate().before(currentDate)){
+            return ResponseEntity.badRequest().body(new MessageResponse("Incorrect date"));
+        }
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         CustomUserDetails user = (CustomUserDetails)authentication.getPrincipal();
         task.setUserId(user.getId());
+        if (task.getEndDate() == null){
+            task.setStatus(TaskStatus.WAITING);
+        }
         taskService.addTask(task);
         return new ResponseEntity<>(new MessageResponse("Task added successfully"),HttpStatus.OK);
     }
